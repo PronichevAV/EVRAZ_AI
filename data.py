@@ -231,7 +231,11 @@ def preprocessing(encode_cat = False):
     test = pd.merge(test, time_between_plavki(df_chronom=df_chronom_test), how='left', left_on='NPLV', right_on='NPLV')
     num_columns += ['time_betw_plavki']
     
-
+    # Артем: добавление целевых значений по углероду
+    df_marki_stali = pd.read_csv('data/marki_stali.csv')
+    train = pd.merge(train, df_marki_stali, how='left', left_on='plavka_NMZ', right_on='plavka_NMZ')
+    test = pd.merge(test, df_marki_stali, how='left', left_on='plavka_NMZ', right_on='plavka_NMZ')
+    num_columns += ['C_min', 'C_max']
 
     print(1)
     # Дроп лишних колонок
