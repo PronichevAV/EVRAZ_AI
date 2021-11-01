@@ -20,33 +20,33 @@ def preprocessing(encode_cat=False):
     """
 
     # Чтение файлов
-    df_chronom_test = pd.read_csv('data/chronom_test.csv')
-    df_chronom_train = pd.read_csv('data/chronom_train.csv')
+    df_chronom_test = pd.read_csv('../data/chronom_test.csv')
+    df_chronom_train = pd.read_csv('../data/chronom_train.csv')
 
-    df_chugun_test = pd.read_csv('data/chugun_test.csv')
-    df_chugun_train = pd.read_csv('data/chugun_train.csv')
+    df_chugun_test = pd.read_csv('../data/chugun_test.csv')
+    df_chugun_train = pd.read_csv('../data/chugun_train.csv')
 
-    df_gas_test = pd.read_csv('data/gas_test.csv')
-    df_gas_train = pd.read_csv('data/gas_train.csv')
+    df_gas_test = pd.read_csv('../data/gas_test.csv')
+    df_gas_train = pd.read_csv('../data/gas_train.csv')
     df_gas_test['Time'] = pd.to_datetime(df_gas_test['Time'])
     df_gas_train['Time'] = pd.to_datetime(df_gas_train['Time'])
 
-    df_lom_test = pd.read_csv('data/lom_test.csv')
-    df_lom_train = pd.read_csv('data/lom_train.csv')
+    df_lom_test = pd.read_csv('../data/lom_test.csv')
+    df_lom_train = pd.read_csv('../data/lom_train.csv')
 
-    df_plavki_test = pd.read_csv('data/plavki_test.csv')
-    df_plavki_train = pd.read_csv('data/plavki_train.csv')
+    df_plavki_test = pd.read_csv('../data/plavki_test.csv')
+    df_plavki_train = pd.read_csv('../data/plavki_train.csv')
 
-    df_produv_test = pd.read_csv('data/produv_test.csv')
-    df_produv_train = pd.read_csv('data/produv_train.csv')
+    df_produv_test = pd.read_csv('../data/produv_test.csv')
+    df_produv_train = pd.read_csv('../data/produv_train.csv')
     df_produv_train['SEC'] = pd.to_datetime(df_produv_train['SEC'])
     df_produv_test['SEC'] = pd.to_datetime(df_produv_test['SEC'])
 
-    df_sip_test = pd.read_csv('data/sip_test.csv')
-    df_sip_train = pd.read_csv('data/sip_train.csv')
+    df_sip_test = pd.read_csv('../data/sip_test.csv')
+    df_sip_train = pd.read_csv('../data/sip_train.csv')
 
-    target = pd.read_csv('data/target_train.csv')
-    sample_submission = pd.read_csv('data/sample_submission.csv')
+    target = pd.read_csv('../data/target_train.csv')
+    sample_submission = pd.read_csv('../data/sample_submission.csv')
     ##############################################
     print('Чтение закончилось')
 
@@ -166,8 +166,8 @@ def preprocessing(encode_cat=False):
     print(o2_timediff_pivot_train.index[0:10])
     print(o2_timediff_pivot_train.index)
 
-    df_produv_train = pd.read_csv('data/produv_train.csv')
-    df_produv_test = pd.read_csv('data/produv_test.csv')
+    df_produv_train = pd.read_csv('../data/produv_train.csv')
+    df_produv_test = pd.read_csv('../data/produv_test.csv')
     df_produv_train['SEC'] = pd.to_datetime(df_produv_train['SEC'])
     df_produv_test['SEC'] = pd.to_datetime(df_produv_test['SEC'])
 
@@ -232,7 +232,7 @@ def preprocessing(encode_cat=False):
     num_columns += ['time_betw_plavki']
 
     # Артем: добавление целевых значений по углероду
-    df_marki_stali = pd.read_csv('data/marki_stali.csv')
+    df_marki_stali = pd.read_csv('../data/marki_stali.csv')
     train = pd.merge(train, df_marki_stali, how='left', left_on='plavka_NMZ', right_on='plavka_NMZ')
     test = pd.merge(test, df_marki_stali, how='left', left_on='plavka_NMZ', right_on='plavka_NMZ')
     num_columns += ['C_min', 'C_max']
