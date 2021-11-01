@@ -37,4 +37,4 @@
 ## Результат
 10 место по приватному скору из 65 команд
 
-![10/65](img/Leader_Board.png)
+![10/65](https://github.com/PronichevAV/evraz_ai/blob/main/img/Leader_board.PNG?raw=true)
